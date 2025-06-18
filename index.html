@@ -161,6 +161,62 @@
 
 
 
+<!-- Single image section -->
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Section Title -->
+      <h2 class="title is-3">Under-segmentation and Over-segmentation</h2>
+      <img src="static/images/PNP-OVSS_Teaser.png" alt="HIST quali"
+           style="max-width: 60%; height: auto; display: block; margin: 0 auto;" />
+      <h2 class="subtitle" style="margin-top: 1.5rem;">
+        Segmentation masks for elephant and giraffe using (a) off-the-shelf cross-attention map, (b) cross-attention + GradCAM, and (c) cross-attention + GradCam + Salience DropOut (\S \ref{sec:salience-dropout}). The naive cross-attention masks are too inclusive (Over-segment) whereas GradCAM is too exclusive (Under-segment). Therefore we proposed to combined Salience Dropout with Gradcam to extract segmentation masks from off-the-shelf VLM for open-set objects.
+  </div>
+</section>
+
+
+
+<!-- Single image section -->
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Section Title -->
+      <h2 class="title is-3">Salience Dropout</h2>
+      <img src="static/images/PNP-OVSS_saliencedrop.png" alt="HIST quali"
+           style="max-width: 60%; height: auto; display: block; margin: 0 auto;" />
+      <h2 class="subtitle" style="margin-top: 1.5rem;">
+        Salience DropOut is an iterative process designed to encourage Vision-Language Models (VLMs) to attend to less discriminative image regions often overlooked by GradCAM. In each iteration, it computes a class-agnostic salience map by summing GradCAM salience maps across predicted classes of the image, then zeros out the top 10 most salient patches. This process is repeated for three iterations, ensuring previously masked regions remain excluded. The final salience map for each class is obtained by summing salience maps from all iterations.
+  </div>
+</section>
+
+<!-- Single image section -->
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Section Title -->
+      <h2 class="title is-3">Automatic Hyperparameter Tuning</h2>
+      <img src="static/images/PNP-OVSS_saliencedrop.png" alt="HIST quali"
+           style="max-width: 60%; height: auto; display: block; margin: 0 auto;" />
+      <h2 class="subtitle" style="margin-top: 1.5rem;">
+        Salience DropOut is an iterative process designed to encourage Vision-Language Models (VLMs) to attend to less discriminative image regions often overlooked by GradCAM. In each iteration, it computes a class-agnostic salience map by summing GradCAM salience maps across predicted classes of the image, then zeros out the top 10 most salient patches. This process is repeated for three iterations, ensuring previously masked regions remain excluded. The final salience map for each class is obtained by summing salience maps from all iterations.
+  </div>
+</section>
+
+  
+<!-- Single image section -->
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Section Title -->
+      <h2 class="title is-3">Qualitative examples</h2>
+      <img src="static/images/PNP-OVSS_quali.png" alt="HIST quali"
+           style="max-width: 60%; height: auto; display: block; margin: 0 auto;" />
+      <h2 class="subtitle" style="margin-top: 1.5rem;">
+        Qualitative Results of PnP-OVSS + BLIP. Images are from Pascal VOC and COCO Object. The right columns and bottom rows show the ground-truth (GT); the rest are our results. Note the good results on small objects like the frisbee and the tennis racket.
+  </div>
+</section>
+
+  
 
 <!-- Teaser video-->
 <section class="hero teaser">
@@ -168,7 +224,7 @@
     <div class="hero-body">
      <!-- Section Title -->
       <h2 class="title is-3">In the wild examples</h2>
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
+      <video poster="" id="tree" autoplay controls muted loop style="max-width: 80%; height: auto; display: block; margin: 0 auto;">
         <!-- Your video here -->
         <source src="static/videos/PnP-OVSS.mp4"
         type="video/mp4">
