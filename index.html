@@ -162,7 +162,7 @@
 
 
 <!-- Single image section -->
-<section class="hero is-light">
+<section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <!-- Section Title -->
@@ -190,15 +190,15 @@
 </section>
 
 <!-- Single image section -->
-<section class="hero is-light">
+<section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <!-- Section Title -->
-      <h2 class="title is-3">Automatic Hyperparameter Tuning</h2>
+      <h2 class="title is-3">Automatic Dense-label-free Hyperparameter Tuning</h2>
       <img src="static/images/PNP-OVSS_saliencedrop.png" alt="HIST quali"
            style="max-width: 60%; height: auto; display: block; margin: 0 auto;" />
       <h2 class="subtitle" style="margin-top: 1.5rem;">
-        Salience DropOut is an iterative process designed to encourage Vision-Language Models (VLMs) to attend to less discriminative image regions often overlooked by GradCAM. In each iteration, it computes a class-agnostic salience map by summing GradCAM salience maps across predicted classes of the image, then zeros out the top 10 most salient patches. This process is repeated for three iterations, ensuring previously masked regions remain excluded. The final salience map for each class is obtained by summing salience maps from all iterations.
+        To tune the key hyperparameters in PnP-OVSS—namely the cross-attention layer 𝐿, attention head H, and binary threshold T—we propose a weakly supervised reward function that avoids the need for pixel-level labels. Instead, the method only requires knowledge of which classes appear in each image. For each class in an image, the predicted segmentation mask is applied, and the masked image is fed into a pretrained network along with the class name to compute a similarity score. A reward is given if the masked image is more similar to the correct class name than to a black image. These rewards are summed across a validation set to guide hyperparameter search. The final parameters, including the Gaussian blur variance, are selected using simple random search.
   </div>
 </section>
 
