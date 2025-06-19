@@ -183,7 +183,7 @@
       <!-- Section Title -->
       <h2 class="title is-3">Salience Dropout</h2>
       <img src="static/images/PnP-OVSS_saliencedropout.png" alt="HIST quali"
-           style="max-width: 20%; height: auto; display: block; margin: 0 auto;" />
+           style="max-width: 60%; height: auto; display: block; margin: 0 auto;" />
       <h2 class="subtitle" style="margin-top: 1.5rem;">
         Salience DropOut is an iterative process designed to encourage Vision-Language Models (VLMs) to attend to less discriminative image regions often overlooked by GradCAM. In each iteration, it computes a class-agnostic salience map by summing GradCAM salience maps across predicted classes of the image, then zeros out the top 10 most salient patches. This process is repeated for three iterations, ensuring previously masked regions remain excluded. The final salience map for each class is obtained by summing salience maps from all iterations.
   </div>
